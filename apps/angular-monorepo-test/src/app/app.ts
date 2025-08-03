@@ -9,7 +9,7 @@ import { Hero } from '@angular-monorepo-test/ui';
   imports: [RouterOutlet, Hero],
   template: `
     <lib-hero
-      title="Welcmoe demo"
+      title="Welcome angular-monorepo-test"
       subtitle="Build something amazing today"
       cta="Get Started"
     ></lib-hero>
