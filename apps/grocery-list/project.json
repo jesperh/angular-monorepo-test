@@ -1,32 +1,28 @@
 {
-  "name": "angular-monorepo-test",
+  "name": "grocery-list",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/angular-monorepo-test/src",
+  "sourceRoot": "apps/grocery-list/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/angular-monorepo-test",
-        "browser": "apps/angular-monorepo-test/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
-        "tsConfig": "apps/angular-monorepo-test/tsconfig.app.json",
+        "outputPath": "dist/apps/grocery-list",
+        "browser": "apps/grocery-list/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/grocery-list/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/angular-monorepo-test/public"
+            "input": "apps/grocery-list/public"
           }
         ],
         "styles": [
-          "apps/angular-monorepo-test/src/custom-theme.scss",
-          "apps/angular-monorepo-test/src/styles.css"
+          "apps/grocery-list/src/custom-theme.scss",
+          "apps/grocery-list/src/styles.css"
         ]
       },
       "configurations": {
@@ -58,10 +54,10 @@
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "angular-monorepo-test:build:production"
+          "buildTarget": "grocery-list:build:production"
         },
         "development": {
-          "buildTarget": "angular-monorepo-test:build:development"
+          "buildTarget": "grocery-list:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -69,7 +65,7 @@
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
       "options": {
-        "buildTarget": "angular-monorepo-test:build"
+        "buildTarget": "grocery-list:build"
       }
     },
     "lint": {
@@ -77,19 +73,17 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/angular-monorepo-test"
+        "reportsDirectory": "../../coverage/apps/grocery-list"
       }
     },
     "serve-static": {
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "angular-monorepo-test:build",
-        "staticFilePath": "dist/apps/angular-monorepo-test/browser",
+        "buildTarget": "grocery-list:build",
+        "staticFilePath": "dist/apps/grocery-list/browser",
         "spa": true
       }
     }
