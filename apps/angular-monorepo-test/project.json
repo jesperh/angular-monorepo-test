@@ -8,11 +8,15 @@
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/angular-monorepo-test",
         "browser": "apps/angular-monorepo-test/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/angular-monorepo-test/tsconfig.app.json",
         "assets": [
           {
@@ -20,7 +24,10 @@
             "input": "apps/angular-monorepo-test/public"
           }
         ],
-        "styles": ["apps/angular-monorepo-test/src/styles.css"]
+        "styles": [
+          "apps/angular-monorepo-test/src/custom-theme.scss",
+          "apps/angular-monorepo-test/src/styles.css"
+        ]
       },
       "configurations": {
         "production": {
@@ -70,7 +77,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
         "reportsDirectory": "../../coverage/apps/angular-monorepo-test"
       }
