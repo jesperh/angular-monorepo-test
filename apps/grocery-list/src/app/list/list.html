@@ -1,9 +1,38 @@
+<h2>Shopping list</h2>
 <form class="example-form">
   <mat-form-field class="full-width">
     <mat-label>Item name</mat-label>
-    <input matInput placeholder="Add an item to list" value="" style="padding-right: 40px;">
-        <button matSuffix matIconButton aria-label="Clear" (click)="onClick()" style="margin-right: 8px;">
+    <input
+      matInput
+      placeholder="Add an item to list"
+      [value]="newItemName()"
+      (input)="setNewItemName($event)"
+      style="padding-right: 8px"
+    />
+    <button matSuffix matIconButton aria-label="Clear" (click)="addItem()" style="margin-right: 8px">
       <mat-icon>add</mat-icon>
     </button>
   </mat-form-field>
-  </form>
+</form>
+
+<ul id="unpurchased-items" class="item-list">
+  @for (item of unPurchasedItems(); track item.name) {
+  <li>
+    <span>{{ item.name }} ({{ item.quantity }})</span>
+    <button mat-icon-button (click)="togglePurchased(item)">
+      <mat-icon>{{ item.purchased ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+    </button>
+  </li>
+  }
+</ul>
+
+<ul id="purchased-items" class="item-list">
+  @for (item of purchasedItems(); track item.name) {
+  <li>
+    <span style="text-decoration: line-through">{{ item.name }} ({{ item.quantity }})</span>
+    <button mat-icon-button (click)="togglePurchased(item)">
+      <mat-icon>{{ item.purchased ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+    </button>
+  </li>
+  }
+</ul>
