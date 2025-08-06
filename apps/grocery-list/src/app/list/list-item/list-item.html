@@ -1,0 +1,6 @@
+<li>
+  <span [style.textDecoration]="purchased ? 'line-through' : 'none'"> {{ item.name }} ({{ item.quantity }}) </span>
+  <button mat-icon-button (click)="togglePurchased(item)">
+    <mat-icon> {{ item.purchased ? 'check_box' : 'check_box_outline_blank' }} </mat-icon>
+  </button>
+</li>

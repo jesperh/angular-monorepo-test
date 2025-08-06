@@ -2,15 +2,15 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MATERIAL_MODULES } from '@angular-monorepo-test/ui';
 import { Item, Items } from '../services/items';
+import { ItemsList } from './items-list/items-list';
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule, ...MATERIAL_MODULES],
+  imports: [CommonModule, ItemsList, ...MATERIAL_MODULES],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
 export class List {
-
   itemsService = inject(Items);
   newItemName = signal('');
 
@@ -31,6 +31,6 @@ export class List {
   }
 
   togglePurchased(item: Item) {
-   this.itemsService.togglePurchased(item);
+    this.itemsService.togglePurchased(item);
   }
 }

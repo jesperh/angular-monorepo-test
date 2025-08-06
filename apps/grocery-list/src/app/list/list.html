@@ -15,24 +15,4 @@
   </mat-form-field>
 </form>
 
-<ul id="unpurchased-items" class="item-list">
-  @for (item of unPurchasedItems(); track item.name) {
-  <li>
-    <span>{{ item.name }} ({{ item.quantity }})</span>
-    <button mat-icon-button (click)="togglePurchased(item)">
-      <mat-icon>{{ item.purchased ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-    </button>
-  </li>
-  }
-</ul>
-
-<ul id="purchased-items" class="item-list">
-  @for (item of purchasedItems(); track item.name) {
-  <li>
-    <span style="text-decoration: line-through">{{ item.name }} ({{ item.quantity }})</span>
-    <button mat-icon-button (click)="togglePurchased(item)">
-      <mat-icon>{{ item.purchased ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-    </button>
-  </li>
-  }
-</ul>
+<app-items-list [items]="unPurchasedItems()" [purchased]="false"> </app-items-list>
