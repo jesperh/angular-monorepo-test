@@ -18,6 +18,7 @@ export class List {
   unPurchasedItems = this.itemsService.unPurchasedItems;
   totalItems = this.itemsService.totalItems;
   totalPurchased = this.itemsService.totalPurchased;
+  totalUnPurchased = this.itemsService.totalUnPurchased;
   showPurchased = this.itemsService.showPurchased;
 
   setNewItemName = (event: Event) => {

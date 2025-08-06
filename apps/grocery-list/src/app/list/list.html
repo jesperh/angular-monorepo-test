@@ -15,4 +15,7 @@
   </mat-form-field>
 </form>
 
+<h3>To be purchased ({{`${totalUnPurchased()} / ${totalItems()}`}})</h3>
 <app-items-list [items]="unPurchasedItems()" [purchased]="false"> </app-items-list>
+<h3>Already purchased ({{`${totalPurchased()} / ${totalItems()}`}})</h3>
+<app-items-list [items]="purchasedItems()" [purchased]="true"> </app-items-list>

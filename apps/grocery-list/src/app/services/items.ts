@@ -14,6 +14,7 @@ export class Items {
 
   totalItems = computed(() => this.state().items.length);
   totalPurchased = computed(() => this.purchasedItems().length);
+  totalUnPurchased = computed(() => this.unPurchasedItems().length);
   showPurchased = computed(() => this.state().showPurchased);
   purchasedItems = computed(() => {
     return this.state().items.filter((item) => item.purchased);
