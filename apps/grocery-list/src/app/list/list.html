@@ -5,11 +5,18 @@
     <input
       matInput
       placeholder="Add an item to list"
-      [value]="newItemName()"
-      (input)="setNewItemName($event)"
+      [(ngModel)]="newItemName"
+      name="newItemName"
       style="padding-right: 8px"
     />
-    <button matSuffix matIconButton aria-label="Clear" (click)="addItem()" style="margin-right: 8px">
+    <button
+      matSuffix
+      matIconButton
+      aria-label="Clear"
+      (click)="addItem()"
+      [disabled]="newItemName().length === 0"
+      style="margin-right: 8px"
+    >
       <mat-icon>add</mat-icon>
     </button>
   </mat-form-field>

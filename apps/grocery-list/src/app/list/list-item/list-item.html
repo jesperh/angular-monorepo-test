@@ -1,5 +1,16 @@
 <li>
   <span [style.textDecoration]="purchased ? 'line-through' : 'none'"> {{ item.name }} ({{ item.quantity }}) </span>
+  <span class="spacer"></span>
+  @if (!item.purchased) {
+  <span class="quantity-controls">
+    <button mat-icon-button (click)="decreaseQuantity(item)" [disabled]="item.quantity <= 1">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <button mat-icon-button (click)="increaseQuantity(item)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </span>
+  }
   <button mat-icon-button (click)="togglePurchased(item)">
     <mat-icon> {{ item.purchased ? 'check_box' : 'check_box_outline_blank' }} </mat-icon>
   </button>

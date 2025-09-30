@@ -41,6 +41,20 @@ export class Items {
       items: state.items.map((i) => (i.name === item.name ? { ...i, purchased: !i.purchased } : i)),
     }));
   }
+
+  increaseQuantity(item: Item) {
+    this.state.update((state) => ({
+      ...state,
+      items: state.items.map((i) => (i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i)),
+    }));
+  }
+
+  decreaseQuantity(item: Item) {
+    this.state.update((state) => ({
+      ...state,
+      items: state.items.map((i) => (i.name === item.name && i.quantity > 1 ? { ...i, quantity: i.quantity - 1 } : i)),
+    }));
+  }
 }
 
 export interface Item {

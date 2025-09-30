@@ -21,11 +21,6 @@ export class List {
   totalUnPurchased = this.itemsService.totalUnPurchased;
   showPurchased = this.itemsService.showPurchased;
 
-  setNewItemName = (event: Event) => {
-    const input = event.target as HTMLInputElement;
-    this.newItemName.set(input.value);
-  };
-
   addItem() {
     this.itemsService.addItem(this.newItemName());
     this.newItemName.set('');

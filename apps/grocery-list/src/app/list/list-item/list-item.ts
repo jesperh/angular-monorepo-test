@@ -17,4 +17,12 @@ export class ListItem {
   togglePurchased(item: Item) {
     this.itemsService.togglePurchased(item);
   }
+
+  increaseQuantity(item: Item) {
+    this.itemsService.increaseQuantity(item);
+  }
+
+  decreaseQuantity(item: Item) {
+    this.itemsService.decreaseQuantity(item);
+  }
 }
