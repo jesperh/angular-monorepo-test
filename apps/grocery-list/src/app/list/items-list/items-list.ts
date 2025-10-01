@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { List } from '../list';
 import { ListItem } from '../list-item/list-item';
-import { Item } from '@angular-monorepo-test/shared-services';
+import { Item } from '@angular-monorepo-test/types';
 
 @Component({
   selector: 'app-items-list',

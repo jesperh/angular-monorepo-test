@@ -2,7 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MATERIAL_MODULES } from '@angular-monorepo-test/ui';
 import { ItemsList } from './items-list/items-list';
-import { Item, Items } from '@angular-monorepo-test/shared-services';
+import { Items } from '@angular-monorepo-test/shared-services';
+import { Item } from '@angular-monorepo-test/types';
 
 @Component({
   selector: 'app-list',

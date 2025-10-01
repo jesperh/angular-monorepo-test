@@ -1,7 +1,8 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 
 import { MATERIAL_MODULES } from '@angular-monorepo-test/ui';
-import { Item, Items } from '@angular-monorepo-test/shared-services';
+import { Items } from '@angular-monorepo-test/shared-services';
+import { Item } from '@angular-monorepo-test/types';
 
 @Component({
   selector: 'app-list-item',

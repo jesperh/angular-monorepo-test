@@ -1,4 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
+import { Item } from '@angular-monorepo-test/types';
 
 @Injectable({
   providedIn: 'root',
@@ -55,12 +56,6 @@ export class Items {
       items: state.items.map((i) => (i.name === item.name && i.quantity > 1 ? { ...i, quantity: i.quantity - 1 } : i)),
     }));
   }
-}
-
-export interface Item {
-  name: string;
-  quantity: number;
-  purchased: boolean;
 }
 
 interface ItemsState {

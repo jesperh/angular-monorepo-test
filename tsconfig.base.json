@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@angular-monorepo-test/shared-services": ["packages/shared-services/src/index.ts"],
+      "@angular-monorepo-test/types": ["packages/types/src/index.ts"],
       "@angular-monorepo-test/ui": ["packages/ui/src/index.ts"]
     }
   },
