@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '../../services/items';
+
 import { List } from '../list';
 import { ListItem } from '../list-item/list-item';
+import { Item } from '@angular-monorepo-test/shared-services';
 
 @Component({
   selector: 'app-items-list',
