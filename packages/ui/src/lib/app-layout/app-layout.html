@@ -1,0 +1,13 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>{{ title }}</h1>
+  </header>
+  <main class="app-main">
+    <ng-content select="[main-content]"></ng-content>
+  </main>
+  <footer class="app-footer">
+    <nav>
+      <ng-content select="[footer-nav]"></ng-content>
+    </nav>
+  </footer>
+</div>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AppLayout } from '@angular-monorepo-test/ui';
 
 @Component({
-  imports: [RouterModule],
+  imports: [RouterModule, AppLayout],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',

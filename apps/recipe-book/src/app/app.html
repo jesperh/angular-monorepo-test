@@ -1,2 +1,4 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<lib-app-layout [title]="'Recipe Book'">
+  <div main-content><router-outlet></router-outlet></div>
+  <div footer-nav><a href="#" aria-label="Home">Home</a> <a href="#" aria-label="List">List</a></div>
+</lib-app-layout>
